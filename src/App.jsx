@@ -1,113 +1,94 @@
 export default function App() {
   return (
     <div style={{
-      fontFamily: 'Arial',
-      background: '#0b0f14',
+      fontFamily: 'Inter, Arial',
+      background: '#05070a',
       color: '#fff',
       minHeight: '100vh'
     }}>
 
-      {/* HERO */}
+      {/* ATTENTION */}
       <section style={{
-        padding: '80px 20px',
         textAlign: 'center',
-        maxWidth: 1000,
+        padding: '100px 20px',
+        maxWidth: 1100,
         margin: '0 auto'
       }}>
+        <img 
+          src="/logo.png" 
+          alt="UrbanAI"
+          style={{ width: 120, marginBottom: 30 }}
+        />
+
         <h1 style={{
-          fontSize: 48,
-          marginBottom: 20,
-          lineHeight: 1.2
+          fontSize: 56,
+          fontWeight: 700,
+          marginBottom: 20
         }}>
-          UrbanAI
+          Decida antes de investir milhões
         </h1>
 
-        <h2 style={{
-          fontSize: 24,
-          fontWeight: 'normal',
-          color: '#aaa',
-          marginBottom: 30
-        }}>
-          Inteligência para análise de terrenos e incorporação
-        </h2>
-
         <p style={{
-          fontSize: 18,
-          marginBottom: 40,
-          color: '#ccc'
+          fontSize: 20,
+          color: '#aaa',
+          maxWidth: 600,
+          margin: '0 auto 40px'
         }}>
-          Descubra o potencial de um terreno antes de investir milhões.
+          O UrbanAI analisa terrenos e revela o potencial real de incorporação em segundos.
         </p>
 
         <button style={{
-          background: '#00ffae',
-          color: '#000',
-          padding: '15px 30px',
+          background: 'linear-gradient(135deg, #7b5cff, #a855f7)',
           border: 'none',
-          borderRadius: 8,
-          fontWeight: 'bold',
-          cursor: 'pointer',
-          fontSize: 16
+          padding: '16px 32px',
+          borderRadius: 12,
+          color: '#fff',
+          fontSize: 16,
+          cursor: 'pointer'
         }}>
-          Analisar terreno
+          Analisar terreno agora
         </button>
       </section>
 
-      {/* PROBLEMA */}
+      {/* INTEREST */}
       <section style={{
-        padding: '60px 20px',
-        background: '#111'
+        padding: '80px 20px',
+        background: '#0b0f14'
       }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <h3 style={{ fontSize: 28, marginBottom: 20 }}>
-            O problema
-          </h3>
+        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 32, marginBottom: 20 }}>
+            O problema do mercado
+          </h2>
 
-          <p style={{ color: '#bbb', lineHeight: 1.6 }}>
-            Comprar um terreno para incorporação sem dados claros pode gerar decisões erradas,
-            prejuízos e oportunidades perdidas. Hoje, muitos investimentos ainda são feitos no feeling.
+          <p style={{ color: '#aaa', lineHeight: 1.6 }}>
+            A maioria das decisões de compra de terrenos ainda é feita com base em percepção,
+            sem dados concretos de viabilidade, potencial construtivo e retorno financeiro.
           </p>
         </div>
       </section>
 
-      {/* SOLUÇÃO */}
+      {/* DESIRE */}
       <section style={{
-        padding: '60px 20px'
-      }}>
-        <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <h3 style={{ fontSize: 28, marginBottom: 20 }}>
-            A solução
-          </h3>
-
-          <p style={{ color: '#bbb', lineHeight: 1.6 }}>
-            O UrbanAI analisa automaticamente o potencial construtivo,
-            estima VGV e indica viabilidade em segundos.
-          </p>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section style={{
-        padding: '60px 20px',
-        background: '#111'
+        padding: '80px 20px'
       }}>
         <div style={{
           maxWidth: 1000,
           margin: '0 auto',
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
           gap: 20
         }}>
           {[
-            "📍 Análise por localização",
+            "📍 Localização inteligente",
             "📐 Potencial construtivo",
-            "💰 Simulação de VGV",
-            "📈 Viabilidade do projeto"
+            "💰 Estimativa de VGV",
+            "📊 Viabilidade financeira"
           ].map((item, i) => (
             <div key={i} style={{
-              background: '#1a1f27',
-              padding: 20,
-              borderRadius: 10
+              background: '#11151c',
+              padding: 25,
+              borderRadius: 14,
+              border: '1px solid #1f2937'
             }}>
               {item}
             </div>
@@ -115,22 +96,59 @@ export default function App() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
+      {/* PROVA / FLUXO */}
       <section style={{
         padding: '80px 20px',
+        background: '#0b0f14',
         textAlign: 'center'
       }}>
-        <h2 style={{ fontSize: 28, marginBottom: 20 }}>
-          Pronto para analisar seu próximo terreno?
+        <h2 style={{ fontSize: 32, marginBottom: 20 }}>
+          Como funciona
+        </h2>
+
+        <p style={{ color: '#aaa', marginBottom: 40 }}>
+          Em poucos passos você transforma dúvida em decisão.
+        </p>
+
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 30,
+          flexWrap: 'wrap'
+        }}>
+          {[
+            "1. Insira o terreno",
+            "2. Receba análise",
+            "3. Tome decisão"
+          ].map((step, i) => (
+            <div key={i} style={{
+              background: '#11151c',
+              padding: 20,
+              borderRadius: 12,
+              width: 200
+            }}>
+              {step}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ACTION */}
+      <section style={{
+        padding: '100px 20px',
+        textAlign: 'center'
+      }}>
+        <h2 style={{ fontSize: 36, marginBottom: 20 }}>
+          Pronto para analisar seu próximo investimento?
         </h2>
 
         <button style={{
-          background: '#00ffae',
-          color: '#000',
-          padding: '15px 30px',
+          background: 'linear-gradient(135deg, #7b5cff, #a855f7)',
           border: 'none',
-          borderRadius: 8,
-          fontWeight: 'bold',
+          padding: '18px 40px',
+          borderRadius: 12,
+          color: '#fff',
+          fontSize: 18,
           cursor: 'pointer'
         }}>
           Começar agora
