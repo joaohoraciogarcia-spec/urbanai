@@ -1,73 +1,34 @@
-import { Toaster } from "@/components/ui/toaster"
-import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PageNotFound from './lib/PageNotFound';
-import { AuthProvider, useAuth } from '@/lib/AuthContext';
-import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import NewProject from './pages/NewProject';
-import ProjectDetail from './pages/ProjectDetail';
-import Library from './pages/Library';
-import EditProject from './pages/EditProject';
-import Templates from './pages/Templates';
-import Landing from './pages/Landing';
-import TesteGratuito from './pages/TesteGratuito';
-
-const AuthenticatedApp = () => {
-  const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
-
-  // Show loading spinner while checking app public settings or auth
-  if (isLoadingPublicSettings || isLoadingAuth) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  // Handle authentication errors
-  if (authError) {
-    if (authError.type === 'user_not_registered') {
-      return <UserNotRegisteredError />;
-    } else if (authError.type === 'auth_required') {
-      // Redirect to login automatically
-      navigateToLogin();
-      return null;
-    }
-  }
-
-  // Render the main app
-  return (
-    <Routes>
-      <Route path="/landing" element={<Landing />} />
-      <Route path="/teste-gratuito" element={<TesteGratuito />} />
-      <Route path="/novo-projeto" element={<NewProject />} />
-      <Route element={<Layout />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/biblioteca" element={<Library />} />
-        <Route path="/projeto/:id" element={<ProjectDetail />} />
-        <Route path="/projeto/:id/editar" element={<EditProject />} />
-        <Route path="/templates" element={<Templates />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Route>
-    </Routes>
-  );
-};
-
-
 function App() {
-
   return (
-    <AuthProvider>
-      <QueryClientProvider client={queryClientInstance}>
-        <Router>
-          <AuthenticatedApp />
-        </Router>
-        <Toaster />
-      </QueryClientProvider>
-    </AuthProvider>
+    <div style={{ padding: 40, fontFamily: 'Arial' }}>
+      <h1>UrbanAI</h1>
+      <h2>Inteligência para análise de terrenos</h2>
+
+      <p>
+        Descubra se um terreno vale a pena antes de investir.
+      </p>
+
+      <button>Analisar terreno</button>
+
+      <hr />
+
+      <h3>O problema</h3>
+      <p>
+        Decidir sobre terrenos sem dados claros pode gerar prejuízos.
+      </p>
+
+      <h3>A solução</h3>
+      <p>
+        O UrbanAI analisa potencial construtivo, VGV e viabilidade em segundos.
+      </p>
+
+      <h3>Para quem é</h3>
+      <ul>
+        <li>Incorporadores</li>
+        <li>Investidores</li>
+        <li>Corretores</li>
+      </ul>
+    </div>
   )
 }
 
